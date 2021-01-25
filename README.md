@@ -17,15 +17,16 @@ The code is written in Python3 and requires the following libraries:
 * Install the python libraries. (See [Requirements](https://github.com/ijcai2021/VAIM#requirements)).
 * Download the code from GitHub:
 ```bash
-git clone https://github.com/junyanz/iGAN
-cd iGAN
-```
-* Download the model. (See `Model Zoo` for details):
-``` bash
-bash ./models/scripts/download_dcgan_model.sh outdoor_64
+git clone https://github.com/ijcai2021/VAIM
+cd VAIM
 ```
 
 * Run the python script:
 ``` bash
-THEANO_FLAGS='device=gpu0, floatX=float32, nvcc.fastmath=True' python iGAN_main.py --model_name outdoor_64
+python3 VAIM.py
 ```
+-By defaul the script will run the first toy example which is $f(x) = x^2$
+- To run another toy example change self.example variable in configuration.py script line 5
+
+
+* To see the jupyter notebbok demo go to VAIM_demo.ipynb 
