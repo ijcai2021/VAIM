@@ -1,4 +1,4 @@
-from configuration import *
+from vaim import *
 
 if __name__ == "__main__":
 
