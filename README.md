@@ -25,7 +25,7 @@ cd VAIM
 ``` bash
 python3 VAIM.py
 ```
--By defaul the script will run the first toy example which is $f(x) = x^2$
+-By defaul the script will run the first toy example which is $\rm f(x) = x^2$
 - To run another toy example change self.example variable in configuration.py script line 5
 
 
