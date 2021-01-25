@@ -179,77 +179,77 @@ class VAIM():
         Z  = vae.encoder.predict(X_train)[2]
         return Z
 
-     # -- check if direcorty exists, otherwise create one
-    def checkdir(path):
-        if not os.path.exists(path): 
-            os.makedirs(path)
+ # -- check if direcorty exists, otherwise create one
+def checkdir(path):
+    if not os.path.exists(path): 
+        os.makedirs(path)
 
-    # -- Generate toy data for sin function
-    def generate_sin_samples(N = 1000, domain = 4):
+# -- Generate toy data for sin function
+def generate_sin_samples(N = 1000, domain = 4):
 
-        x = (np.random.rand(N, 1)-0.5) * domain * np.pi
-        y = np.sin(x) + np.random.randn(N, 1) * 0.05
+    x = (np.random.rand(N, 1)-0.5) * domain * np.pi
+    y = np.sin(x) + np.random.randn(N, 1) * 0.05
 
-        return x, y
+    return x, y
 
-    # -- Generate toy data for f(x) = x^2
-    def generate_x2_samples(N = 1000, noise = 0.05, domain = 5):
+# -- Generate toy data for f(x) = x^2
+def generate_x2_samples(N = 1000, noise = 0.05, domain = 5):
 
-        x = (np.random.rand(N, 1) -0.5 ) * (domain * 2)
-        y = np.power(x, 2) + np.random.randn(N, 1) * noise
+    x = (np.random.rand(N, 1) -0.5 ) * (domain * 2)
+    y = np.power(x, 2) + np.random.randn(N, 1) * noise
 
-        return x, y
+    return x, y
 
-    # -- Generate toy data for 2d circle example f(x) = x1^2+x2^2
-    def generate_x2_y2(N = 1000):
+# -- Generate toy data for 2d circle example f(x) = x1^2+x2^2
+def generate_x2_y2(N = 1000):
 
-        x = np.random.randn(N, 2)
-        y = x[:, 0] * x[:, 0] + x[:, 1] * x[:, 1] 
+    x = np.random.randn(N, 2)
+    y = x[:, 0] * x[:, 0] + x[:, 1] * x[:, 1] 
 
-        return x, y
+    return x, y
 
-    # -- plot function of sin
-    def plot_sin(x,y):
-        plt.plot(x, y, '.')
-        plt.xlabel('x', size = 12)
-        plt.ylabel(r'$\sin(x)$', size = 12)
-        plt.show()
+# -- plot function of sin
+def plot_sin(x,y):
+    plt.plot(x, y, '.')
+    plt.xlabel('x', size = 12)
+    plt.ylabel(r'$\sin(x)$', size = 12)
+    plt.show()
 
-    # -- plot function of f(x) = x^2
-    def plot_x2(x,y):
-        plt.plot(x, y, '.')
-        plt.xlabel('x', size = 12)
-        plt.ylabel(r'$x^2$', size = 12)
-        plt.show()
+# -- plot function of f(x) = x^2
+def plot_x2(x,y):
+    plt.plot(x, y, '.')
+    plt.xlabel('x', size = 12)
+    plt.ylabel(r'$x^2$', size = 12)
+    plt.show()
 
-    # -- plot loss
-    def plot_loss(history):
-        plt.plot(history.history['loss'])
-        plt.plot(history.history['val_loss'])
-        plt.semilogy()
-        plt.title('model loss')
-        plt.ylabel('loss')
-        plt.xlabel('epoch')
-        plt.legend(['train', 'val'], loc='upper left')
-        plt.show()
+# -- plot loss
+def plot_loss(history):
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.semilogy()
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'val'], loc='upper left')
+    plt.show()
 
 
-    # -- plot results
-    def plot_result(result, X_test, y_test):
-        fig, ax = plt.subplots()
-        ax.plot(X_test, y_test, '.')
-        ax.plot(result[0] , y_test, '.')
-        ax.legend(['true', 'pred'])
-        plt.savefig('result.png')
+# -- plot results
+def plot_result(result, X_test, y_test):
+    fig, ax = plt.subplots()
+    ax.plot(X_test, y_test, '.')
+    ax.plot(result[0] , y_test, '.')
+    ax.legend(['true', 'pred'])
+    plt.savefig('result.png')
 
-    # -- plot latent
-    def plot_latent(Z, X_train):
-        pca = PCA(n_components=2)
-        x = pca.fit_transform(Z)
-        fig, ax = plt.subplots()
-        im = ax.scatter(x[:,0], x[:,1],cmap='jet',c = X_train.reshape(-1), s = 2)
-        cb = fig.colorbar(im)
-        cb.set_label(r'$x$', labelpad=-26, y=1.07, rotation=0, size = 12)
-        ax.set_xlabel('$PCA\ 1$')
-        ax.set_ylabel('$PCA\ 2$')
-        plt.savefig('latent.png')
+# -- plot latent
+def plot_latent(Z, X_train):
+    pca = PCA(n_components=2)
+    x = pca.fit_transform(Z)
+    fig, ax = plt.subplots()
+    im = ax.scatter(x[:,0], x[:,1],cmap='jet',c = X_train.reshape(-1), s = 2)
+    cb = fig.colorbar(im)
+    cb.set_label(r'$x$', labelpad=-26, y=1.07, rotation=0, size = 12)
+    ax.set_xlabel('$PCA\ 1$')
+    ax.set_ylabel('$PCA\ 2$')
+    plt.savefig('latent.png')
