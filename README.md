@@ -26,5 +26,10 @@ cd VAIM
 python3 VAIM.py
 ```
 * By default the script will run the first toy example which is f</sub>(x) = x<sup>2.
-* To run another example, adjust self.example variable in line 12 in VAIM.py
-* To see the jupyter notebbok demo go to VAIM_demo.ipynb 
+* To run another example, adjust self.example variable in line 12 in VAIM.py.
+* To see the jupyter notebbok demo go to VAIM_demo.ipynb.
+  
+  
+ ## Results:
+ * The script will create a directory 'saved_model/' and save the the weights with the lowest validation error
+ * It will also plot the latent and the results
