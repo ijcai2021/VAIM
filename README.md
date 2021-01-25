@@ -25,8 +25,7 @@ cd VAIM
 ``` bash
 python3 VAIM.py
 ```
--By defaul the script will run the first toy example which is f</sub>(x) = x<sup>2
-- To run another toy example change self.example variable in configuration.py script line 5
+-By defaul the script will run the first toy example which is f</sub>(x) = x<sup>2. To change the example adjust self.example variable in line 12 in VAIM.py
 
 
 
