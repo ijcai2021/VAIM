@@ -249,19 +249,20 @@ def plot_loss(history):
 # -- plot results
 def plot_result(result, X_test, y_test):
 
-    plt.plot(X_test, y_test, '.')
-    plt.plot(result , y_test, '.')
-
-    plt.legend(['true', 'pred'])
-    plt.show()
-    
+    fig, ax = plt.subplots()
+    ax.plot(X_test, y_test, '.')
+    ax.plot(result[0] , y_test, '.')
+    ax.legend(['true', 'pred'])
+    plt.savefig('result.png')
+     
 # -- plot latent
 def plot_latent(Z, X_train):
-
     pca = PCA(n_components=2)
     x = pca.fit_transform(Z)
-    plt.scatter(x[:,0], x[:,1],cmap='jet',c = X_train.reshape(-1), s = 2)
-    plt.colorbar()
-    plt.xlabel('$PCA\ 1$')
-    plt.ylabel('$PCA\ 2$')
-    plt.show()
+    fig, ax = plt.subplots()
+    im = ax.scatter(x[:,0], x[:,1],cmap='jet',c = X_train.reshape(-1), s = 2)
+    cb = fig.colorbar(im)
+    cb.set_label(r'$x$', labelpad=-26, y=1.07, rotation=0, size = 12)
+    ax.set_xlabel('$PCA\ 1$')
+    ax.set_ylabel('$PCA\ 2$')
+    plt.savefig('latent.png')
