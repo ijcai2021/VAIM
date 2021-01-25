@@ -8,7 +8,6 @@
 
 ## Requirements
 The code is written in Python3 and requires the following libraries:
-* numpy
 * tensorflow==1.11.0
 * keras==2.1.2
 
