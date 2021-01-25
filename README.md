@@ -28,7 +28,7 @@ python3 VAIM.py
 -By defaul the script will run the first toy example which is $\rm f(x) = x^2$
 - To run another toy example change self.example variable in configuration.py script line 5
 
-h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
+f</sub>(x) = &x;<sup>2</sub> x + &theta;<sub>1</sub>x
 
 
 * To see the jupyter notebbok demo go to VAIM_demo.ipynb 
