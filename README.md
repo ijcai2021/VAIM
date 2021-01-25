@@ -1,11 +1,7 @@
 
 
 
-
-<p align="center">
   # VAIM
-
-</p>
 
 **This is the implementation of Variational Autoencoder Inverse Mapper: An End-to-End Deep Learning Framework for Inverse Problems (VAIM).**
 
