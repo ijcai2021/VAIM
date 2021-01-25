@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  ###VAIM
+  # VAIM
 
 </p>
 
