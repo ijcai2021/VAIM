@@ -1,8 +1,5 @@
 from configuration import *
 
-# import matplotlib
-# matplotlib.use('Agg')
-
 if __name__ == "__main__":
 
     # -- set up the gpu env
